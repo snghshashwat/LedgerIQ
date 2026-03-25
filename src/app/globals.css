@@ -1,26 +1,97 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --app-bg: #f4f7fb;
+  --surface: #ffffff;
+  --surface-muted: #f8fafc;
+  --surface-hover: #eef3f8;
+  --surface-strong: #e4ecf5;
+  --border-subtle: #d5dfeb;
+  --text-primary: #122033;
+  --text-secondary: #4c627d;
+  --text-tertiary: #7f90a6;
+  --metric-highlight: #0f3f75;
+  --metric-highlight-text: #f3f8ff;
+  --metric-accent-1: #2f80ed;
+  --metric-accent-2: #2d9f76;
+  --metric-accent-3: #d8832f;
+  --metric-accent-4: #7d58c2;
+  --button-primary: #134f8c;
+  --focus: #2f80ed;
+  --chart-grid: #e5ecf5;
+}
+
+.dark {
+  --app-bg: #0a0e17;
+  --surface: #1a1f2e;
+  --surface-muted: #141820;
+  --surface-hover: #242d3d;
+  --surface-strong: #2a3546;
+  --border-subtle: #3d4a5c;
+  --text-primary: #f0f4ff;
+  --text-secondary: #c5d3e8;
+  --text-tertiary: #9aaccc;
+  --metric-highlight: #2f6db8;
+  --metric-highlight-text: #f0f4ff;
+  --metric-accent-1: #5eb3ff;
+  --metric-accent-2: #4ee6b8;
+  --metric-accent-3: #ffb84d;
+  --metric-accent-4: #c99ffe;
+  --button-primary: #3d79ba;
+  --focus: #5eb3ff;
+  --chart-grid: #242d3d;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background: var(--app-bg);
+  --color-foreground: var(--text-primary);
+  --font-sans: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at 0% 0%, #e7eef8 0%, transparent 45%),
+    radial-gradient(circle at 100% 10%, #eaf2fc 0%, transparent 42%),
+    var(--app-bg);
+  color: var(--text-primary);
+  font-family: var(--font-plex-sans), sans-serif;
+  transition:
+    background-color 220ms ease,
+    color 220ms ease;
+}
+
+.dark body {
+  background:
+    radial-gradient(circle at 0% 0%, #132033 0%, transparent 45%),
+    radial-gradient(circle at 100% 10%, #10253a 0%, transparent 42%),
+    var(--app-bg);
+}
+
+.page-enter {
+  animation: page-enter 260ms ease-out;
+}
+
+.pressable {
+  transition:
+    transform 140ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease;
+  transform-origin: center;
+}
+
+.pressable:active {
+  transform: scale(0.97);
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
