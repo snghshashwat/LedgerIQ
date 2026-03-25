@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   title: "LedgerIQ | Financial Intelligence Dashboard",
   description:
     "AI-powered financial insights dashboard with interactive visualizations, dark mode, and advanced filtering for real-time financial analysis.",
+  icons: {
+    icon: "/ledgeriq-logo.jpg",
+    shortcut: "/ledgeriq-logo.jpg",
+    apple: "/ledgeriq-logo.jpg",
+  },
   keywords: [
     "financial dashboard",
     "analytics",
