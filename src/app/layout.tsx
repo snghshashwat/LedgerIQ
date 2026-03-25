@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   description:
     "AI-powered financial insights dashboard with interactive visualizations, dark mode, and advanced filtering for real-time financial analysis.",
   icons: {
-    icon: "/ledgeriq-logo.jpg",
-    shortcut: "/ledgeriq-logo.jpg",
-    apple: "/ledgeriq-logo.jpg",
+    icon: "/favicon.png?v=2",
+    shortcut: "/favicon.png?v=2",
+    apple: "/favicon.png?v=2",
   },
   keywords: [
     "financial dashboard",
